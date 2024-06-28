@@ -40,6 +40,7 @@ const ReactPdfViewer = ({ fileUrl, fileName = 'document.pdf' }) => {
 	return (
 		<Worker workerUrl={`https://unpkg.com/pdfjs-dist@${pdfjsVersion}/build/pdf.worker.js`}>
 			<Viewer
+				defaultScale={1}
 				fileUrl={fileUrl}
 				plugins={[defaultLayoutPluginInstance, getFilePluginInstance]}
 				// defaultScale={SpecialZoomLevel.PageWidth}
