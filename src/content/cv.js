@@ -15,7 +15,7 @@ export const cv = {
 		{
 			type: 'linkedin',
 			label: 'Mukhlis Adhe Purwanto',
-			url: 'https://www.linkedin.com/in/mukhlis-adhe-purwanto-b06658128'
+			url: 'https://www.linkedin.com/in/mukhlis-adhe-purwanto'
 		}
 	],
 	skills: ['Team Work', 'Problem Solving'],
