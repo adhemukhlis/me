@@ -1,17 +1,12 @@
-import fs from 'fs'
-import path from 'path'
 import { createPdf } from '@/components/PdfGenerator'
-import cvDocument from '@/components/PdfGenerator/TemplateDocuments/cvDocument'
+import resumeDocument from '@/components/PdfGenerator/TemplateDocuments/resumeDocument'
 import { cv } from '@/content/cv'
 import toKebabCase from '@/utils/kebab-case'
-const rootDirectory = path.join(process.cwd(), 'src')
 const {
-	profile_picture_filename,
 	full_name,
 	position,
 	city,
 	province,
-	country,
 	summary,
 	contact,
 	skills,
@@ -22,7 +17,7 @@ const {
 } = cv
 const [wa, ...other_contact] = contact
 
-const photoPath = path.join(rootDirectory, 'assets', 'images', profile_picture_filename)
+// const photoPath = path.join(rootDirectory, 'assets', 'images', profile_picture_filename)
 export const GET = async (_request) => {
 	// const searchParams = _request.nextUrl.searchParams
 	// const full = searchParams.get('full') === 'true'
@@ -35,18 +30,13 @@ export const GET = async (_request) => {
 	]
 
 	try {
-		const imageBuffer = fs.readFileSync(photoPath)
-		const base64_photo_profile = imageBuffer.toString('base64')
 		const kebab_full_name = toKebabCase(full_name)
 		const filename = `CV__${kebab_full_name}.pdf`
 		const binaryResult = await createPdf({
-			template: cvDocument({
-				photo_profile: base64_photo_profile,
+			template: resumeDocument({
 				full_name,
 				position,
-				city,
-				province,
-				country,
+				city: [city, province].join(', '),
 				summary,
 				contact: modified_contact,
 				skills,

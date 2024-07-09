@@ -22,17 +22,17 @@ const availableContactIcon = {
 	linkedin: linkedinIcon
 }
 const availableContactType = Object.keys(availableContactIcon)
-const divider = [
-	{
-		margin: [0, gapSize, 0, 0],
-		table: {
-			headerRows: 1,
-			widths: [40],
-			body: [[''], ['']]
-		},
-		layout: 'headerLineOnly'
-	}
-]
+// const divider = [
+// 	{
+// 		margin: [0, gapSize, 0, 0],
+// 		table: {
+// 			headerRows: 1,
+// 			widths: [40],
+// 			body: [[''], ['']]
+// 		},
+// 		layout: 'headerLineOnly'
+// 	}
+// ]
 const cvDocument = ({
 	photo_profile,
 	full_name,
@@ -45,7 +45,8 @@ const cvDocument = ({
 	skills,
 	technical_skills,
 	certifications,
-	educations
+	educations,
+	update_at
 }) => ({
 	permissions: {
 		printing: 'highResolution',
@@ -74,7 +75,7 @@ const cvDocument = ({
 					{
 						width: 60,
 						fillColor: '#ff00ff',
-						text: `${dayjs().format('YYYYMMDD')}`,
+						text: `${dayjs(update_at).format('YYYYMMDD')}`,
 						color: '#E2E2E2'
 					},
 					{
@@ -109,13 +110,14 @@ const cvDocument = ({
 								{
 									width: '*',
 									layout: 'noBorders',
+									margin: [0, gapSize / 2, 0, 0],
 									table: {
 										widths: [16, '*'],
 										body: [
 											[
 												{
 													svg: locationIcon,
-													fit: [18, 18]
+													fit: [16, 16]
 												},
 												city
 											],
@@ -124,7 +126,7 @@ const cvDocument = ({
 												.map((item) => [
 													{
 														svg: availableContactIcon[item?.type],
-														fit: [18, 18]
+														fit: [16, 16]
 													},
 													{
 														text: (item?.label || '')
@@ -141,19 +143,22 @@ const cvDocument = ({
 							[{ text: 'Skills', style: 'titleStyle' }],
 							[
 								{
-									ul: skills
+									ul: skills,
+									margin: [0, gapSize / 2, 0, 0]
 								}
 							],
-							[{ text: 'Technical Skills', style: 'titleStyle' }],
+							[{ text: 'Tools', style: 'titleStyle' }],
 							[
 								{
-									ul: technical_skills
+									ul: technical_skills,
+									margin: [0, gapSize / 2, 0, 0]
 								}
 							],
 							[{ text: 'Certifications', style: 'titleStyle' }],
 							[
 								{
-									ul: certifications
+									ul: certifications,
+									margin: [0, gapSize / 2, 0, 0]
 								}
 							]
 						]
@@ -169,7 +174,7 @@ const cvDocument = ({
 							[{ text: full_name, style: 'fullNameStyle' }],
 							[{ text: position, fontSize: 12, bold: true }],
 							[{ text: [city, province, country].join(', '), fontSize: 10 }],
-							divider,
+							// divider,
 							[{ text: 'Summary', style: 'titleStyle' }],
 							[
 								{
@@ -177,7 +182,7 @@ const cvDocument = ({
 									style: 'contentStyle'
 								}
 							],
-							divider,
+							// divider,
 							[{ text: 'Experience', style: 'titleStyle' }],
 							[
 								{
@@ -221,7 +226,7 @@ const cvDocument = ({
 									style: 'contentStyle'
 								}
 							],
-							divider,
+							// divider,
 							[{ text: 'Education', style: 'titleStyle' }],
 							...(educations || []).flatMap(({ study_program, institution, year_of_start, year_of_end, ...other }) => [
 								[
@@ -259,7 +264,7 @@ const cvDocument = ({
 		titleStyle: {
 			fontSize: 16,
 			bold: true,
-			margin: [0, gapSize, 0, 0]
+			margin: [0, gapSize, 0, (gapSize / 2) * -1]
 		},
 		titleContentStyle: {
 			bold: true,
@@ -267,7 +272,7 @@ const cvDocument = ({
 		},
 		contentStyle: {
 			alignment: 'justify',
-			margin: [0, gapSize / 3, 0, 0]
+			margin: [0, gapSize / 2, 0, 0]
 		}
 	},
 	defaultStyle: {

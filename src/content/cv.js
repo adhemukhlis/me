@@ -1,12 +1,14 @@
 export const cv = {
 	// src/assets/images
+	update_at: '2024-07-09',
 	profile_picture_filename: 'photo.jpg',
 	full_name: 'Mukhlis Adhe Purwanto',
 	city: 'Bekasi',
 	province: 'West Java',
 	country: 'Indonesia',
 	position: 'Front-End Developer',
-	summary: 'I create beautiful interfaces that are simple, friendly, and have optimal performance.',
+	summary:
+		'A Web Developer mainly focused on Front-end (human interaction) side. I create beautiful interfaces that are simple, friendly, and have optimal performance.',
 	contact: [
 		// available whatsapp | email | github | linkedin
 		{ type: 'whatsapp', label: '+6285329000180', url: 'https://wa.me/6285329000180' },
@@ -19,7 +21,7 @@ export const cv = {
 		}
 	],
 	skills: ['Team Work', 'Problem Solving'],
-	technical_skills: ['Javascript', 'ReactJS', 'NextJS', 'Git', 'Docker'],
+	technical_skills: ['Javascript', 'React.js', 'Next.js', 'Git', 'Docker'],
 	certifications: ['BNSP Junior Web Developer'],
 	educations: [
 		{
@@ -27,8 +29,9 @@ export const cv = {
 			institution: 'Institut Teknologi Telkom Purwokerto',
 			year_of_start: '2016',
 			year_of_end: '2023',
-			GPA: '3.46',
-			final_project_title: 'Development Of Cubar Math Educational Games Using The GDLC Method'
+			GPA: '3.61',
+			final_project_title: 'Development Of Cubar Math Educational Games Using The GDLC Method',
+			final_project_description: 'I developed a web-based online game with multiplayer capabilities for my final project.'
 		},
 		{
 			study_program: 'Software Engineering',

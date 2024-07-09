@@ -13,6 +13,11 @@ const RootPage = () => {
 				<p className={clsx('summary', 'italic')}>{cv.summary}</p>
 			</div>
 			<div className={clsx('menu')}>
+				<Link href="/resume">
+					<button className="ui-btn">
+						<span>Resume</span>
+					</button>
+				</Link>
 				<Link href="/cv">
 					<button className="ui-btn">
 						<span>CV</span>
