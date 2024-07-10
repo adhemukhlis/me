@@ -5,7 +5,7 @@ import { cv } from '@/content/cv'
 const RootPage = () => {
 	return (
 		<main className={clsx('flex-fill-container')}>
-			<div className={clsx('content')}>
+			<div className={clsx('content', 'content-responsive')}>
 				<h1 className={clsx('full-name')}>
 					<span>{cv.full_name}</span>
 				</h1>

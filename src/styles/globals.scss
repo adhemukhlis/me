@@ -176,3 +176,38 @@ h1 span {
 			50.5% 95%;
 	}
 }
+
+/* Small devices (phones, 576px and up) */
+@media (min-width: 576px) {
+	.content-responsive {
+		padding: 4rem;
+	}
+}
+
+/* Medium devices (tablets, 768px and up) */
+@media (min-width: 768px) {
+	.content-responsive {
+		padding: 4rem;
+	}
+}
+
+/* Large devices (desktops, 992px and up) */
+@media (min-width: 992px) {
+	.content-responsive {
+		padding: 4rem;
+	}
+}
+
+/* Extra large devices (large desktops, 1200px and up) */
+@media (min-width: 1200px) {
+	.content-responsive {
+		padding: 4rem;
+	}
+}
+
+/* Extra extra large devices (larger desktops, 1400px and up) */
+@media (min-width: 1400px) {
+	.content-responsive {
+		padding: 4rem;
+	}
+}

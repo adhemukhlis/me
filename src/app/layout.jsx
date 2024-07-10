@@ -1,5 +1,6 @@
 import { Noto_Serif } from 'next/font/google'
 import '@/styles/globals.scss'
+import '@/styles/prismjs.css'
 
 const font = Noto_Serif({
 	style: ['normal', 'italic'],
