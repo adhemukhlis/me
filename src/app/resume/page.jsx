@@ -2,8 +2,13 @@ import { Suspense } from 'react'
 import PdfViewer from './client/PdfViewer'
 
 export const metadata = {
-	title: 'Resume',
-	viewport: 'width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no'
+	title: 'Resume'
+}
+export const viewport = {
+	width: 'device-width',
+	initialScale: 1,
+	maximumScale: 1,
+	userScalable: false
 }
 const CVPage = ({ searchParams }) => {
 	return (
