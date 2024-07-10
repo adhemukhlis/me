@@ -6,7 +6,7 @@ async function fetchFileCommits(filePath) {
 			Accept: 'application/vnd.github.v3+json'
 		},
 		next: {
-			revalidate: 300
+			revalidate: 10
 		}
 	})
 	if (!response.ok) {
@@ -22,7 +22,7 @@ export const getBlogPosts = async () => {
 				Accept: 'application/vnd.github.v3+json'
 			},
 			next: {
-				revalidate: 300
+				revalidate: 10
 			}
 		})
 		const data = await response.json()

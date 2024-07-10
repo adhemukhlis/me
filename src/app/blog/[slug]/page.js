@@ -10,7 +10,7 @@ export const generateMetadata = async ({ params, searchParams: _searchParams }, 
 const BlogDetailPage = async ({ params }) => {
 	const blogPostContentResponse = await getBlogContent(params.slug)
 	const blogPostContent = blogPostContentResponse.data.contentHtml ?? ''
-	const metadataContent = blogPostContent.data.metadata
+	const metadataContentTitle = blogPostContentResponse.data?.metadata.title ?? ''
 	return (
 		<div
 			style={{
@@ -21,7 +21,7 @@ const BlogDetailPage = async ({ params }) => {
 				paddingRight: '4rem',
 				gap: '4rem'
 			}}>
-			<h1>{metadataContent.title}</h1>
+			<h1>{metadataContentTitle}</h1>
 			<article
 				dangerouslySetInnerHTML={{
 					__html: blogPostContent

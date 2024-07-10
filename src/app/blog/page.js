@@ -40,8 +40,8 @@ const BlogPage = async () => {
 							<small>{dayjs(post.updated_at).format('MMM DD')}</small>
 							<span style={{ display: 'flex', alignItems: 'center', gap: '0.4rem' }}>
 								<span
-									style={{ borderRadius: '50%', width: 40, aspectRatio: '1/1', overflow: 'hidden', backgroundColor: 'violet' }}>
-									<Image src={post.author.avatar} width={40} height={40} alt={`${post.author.username} avatar`} />
+									style={{ borderRadius: '50%', width: 32, aspectRatio: '1/1', overflow: 'hidden', backgroundColor: 'violet' }}>
+									<Image src={post.author.avatar} width={32} height={32} alt={`${post.author.username} avatar`} />
 								</span>
 								<Link href={post.author.github_url}>{post.author.username}</Link>
 							</span>

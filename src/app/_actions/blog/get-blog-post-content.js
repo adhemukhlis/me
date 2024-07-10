@@ -6,7 +6,7 @@ import remarkPrism from 'remark-prism'
 const metadataRegex = /<!--\s*const metadata\s*=\s*({[\s\S]*?})\s*-->/
 const extractMetadata = (content) => {
 	const metadataMatch = content.match(metadataRegex)
-	const metadataJson = metadataMatch[1]
+	const metadataJson = metadataMatch?.[1]
 	if (!!metadataJson) {
 		var stringObj = metadataJson.replace(/(['"])?([a-zA-Z0-9_]+)(['"])?:/g, '"$2":').replace(/'/g, '"')
 		return JSON.parse(stringObj)
@@ -20,11 +20,12 @@ export const getBlogContent = async (slug) => {
 	try {
 		const response = await fetch(`https://api.github.com/repos/adhemukhlis/me/contents/${filePath}?ref=blog`, {
 			headers: {
+				Authorization: `token ${process.env.GITHUB_TOKEN}`,
 				Accept: 'application/vnd.github.v3+json'
 			},
-			// next: {
-			// 	revalidate: 300
-			// },
+			next: {
+				revalidate: 10
+			},
 			cache: 'no-store'
 		})
 		const fileData = await response.json()
@@ -36,6 +37,7 @@ export const getBlogContent = async (slug) => {
 			// .use(html, { sanitize: false })
 			.use(remarkPrism)
 			.process(matterResult.content)
+
 		const contentHtml = processedContent.toString()
 		return { status: response.status, message: `success`, data: { contentHtml, metadata, ...matterResult.data } }
 	} catch (error) {

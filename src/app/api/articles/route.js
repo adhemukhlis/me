@@ -10,7 +10,7 @@ async function fetchFileCommits(filePath) {
 	const response = await fetch(commitsUrl, {
 		headers,
 		next: {
-			revalidate: 300
+			revalidate: 10
 		}
 	})
 	if (!response.ok) {
@@ -24,7 +24,7 @@ export const GET = async (_request) => {
 		const response = await fetch(url, {
 			headers,
 			next: {
-				revalidate: 300
+				revalidate: 10
 			}
 		})
 		const data = await response.json()
