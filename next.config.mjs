@@ -2,17 +2,17 @@
 const nextConfig = {
 	reactStrictMode: false,
 	experimental: {
-		serverComponentsExternalPackages: ['pdfmake']
+		serverComponentsExternalPackages: ['pdfmake', 'remark-prism']
+	},
+	images: {
+		remotePatterns: [
+			{
+				protocol: 'https',
+				hostname: 'avatars.githubusercontent.com'
+			}
+		],
+		dangerouslyAllowSVG: true
 	}
-	// images: {
-	// 	remotePatterns: [
-	// 		{
-	// 			protocol: 'https',
-	// 			hostname: 'api.dicebear.com'
-	// 		}
-	// 	],
-	// dangerouslyAllowSVG: true
-	// }
 }
 
 export default nextConfig
