@@ -15,17 +15,28 @@ export const GET = async (_request, { params: { slug } }) => {
 			}
 		})
 		const fileData = await response.json()
-
-		// const content = Buffer.from(fileData.content, 'base64').toString('utf8')
-		return Response.json({
-			slug,
-			status: response.status,
-			data: {
-				content: fileData
-			}
-		})
+		if ([200].includes(response.status)) {
+			const content = Buffer.from(fileData.content, 'base64').toString('utf8')
+			return Response.json({
+				slug,
+				status: response.status,
+				message: fileData.message,
+				data: {
+					content
+				}
+			})
+		} else {
+			return Response.json({
+				slug,
+				status: response.status,
+				message: fileData.message
+			})
+		}
 	} catch (error) {
 		console.error(error)
-		return { status: 500, message: 'server error', detail: JSON.stringify(error) }
+		return Response.json({
+			slug,
+			error: JSON.stringify(error)
+		})
 	}
 }
