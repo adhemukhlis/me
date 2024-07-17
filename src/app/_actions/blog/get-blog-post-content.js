@@ -28,9 +28,10 @@ export const getBlogContent = async (slug) => {
 			}
 		})
 		console.log('status : ', response.status)
+
+		const fileData = await response.json()
 		console.log('fileData : ', fileData)
 		console.log('response : ', response)
-		const fileData = await response.json()
 		const content = Buffer.from(fileData.content, 'base64').toString('utf8')
 		const metadata = extractMetadata(content)
 		const matterResult = matter(content)
