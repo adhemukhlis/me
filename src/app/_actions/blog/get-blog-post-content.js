@@ -25,8 +25,7 @@ export const getBlogContent = async (slug) => {
 			},
 			next: {
 				revalidate: 10
-			},
-			cache: 'no-store'
+			}
 		})
 		console.log('status : ', response.status)
 		console.log('fileData : ', fileData)
