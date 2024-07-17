@@ -1,5 +1,9 @@
 export const GET = async (_request, { params: { slug } }) => {
 	const filePath = `blog/posts/${slug}.md`
+	console.log({
+		url: `https://api.github.com/repos/adhemukhlis/me/contents/${filePath}?ref=blog`,
+		auth: `token ${process.env.GITHUB_TOKEN}`
+	})
 	try {
 		const response = await fetch(`https://api.github.com/repos/adhemukhlis/me/contents/${filePath}?ref=blog`, {
 			headers: {
@@ -12,12 +16,12 @@ export const GET = async (_request, { params: { slug } }) => {
 		})
 		const fileData = await response.json()
 
-		const content = Buffer.from(fileData.content, 'base64').toString('utf8')
+		// const content = Buffer.from(fileData.content, 'base64').toString('utf8')
 		return Response.json({
 			slug,
 			status: response.status,
 			data: {
-				content
+				content: fileData
 			}
 		})
 	} catch (error) {
