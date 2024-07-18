@@ -1,3 +1,5 @@
+<!-- const metadata = { title: "Guide", tags: ["guide", "template"] } -->
+
 # Head 1
 ## Head 2
 ### Head 3
@@ -62,7 +64,7 @@ This site was built using [Next.js](https://nextjs.org/)
 | - | :- | -: | :-: |
 | 1 | 2 | 3 | 4 |
 
-
+`layout.jsx`
 ```jsx
 import { Noto_Serif } from 'next/font/google'
 import '@/styles/globals.scss'
