@@ -64,8 +64,7 @@ This site was built using [Next.js](https://nextjs.org/)
 | - | :- | -: | :-: |
 | 1 | 2 | 3 | 4 |
 
-> `layout.jsx`
-
+`app/layout.jsx`
 ```jsx
 import { Noto_Serif } from 'next/font/google'
 import '@/styles/globals.scss'
