@@ -1,0 +1,19 @@
+section.about {
+	max-width: 40rem;
+	background-color: #fafafe;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	gap: 1rem;
+	border-radius: 0.6rem;
+	padding: 1.2rem;
+	border: 1px solid #eaeaea;
+	letter-spacing: 0.028rem;
+}
+
+.avatar {
+	border-radius: 50%;
+	overflow: hidden;
+	width: 180;
+	aspect-ratio: 1/1;
+}

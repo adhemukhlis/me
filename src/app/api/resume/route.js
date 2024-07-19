@@ -28,8 +28,6 @@ export const GET = async (_request) => {
 			: [{ ...wa, label: wa.label.substring(0, wa.label.length - 8) + 'XXXXXXXX', url: 'mailto:adhemukhlis@gmail.com' }]),
 		...other_contact
 	]
-	console.info('SKILLS', skills)
-	console.info('TSKILLS', technical_skills)
 
 	try {
 		const kebab_full_name = toKebabCase(full_name)

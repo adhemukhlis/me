@@ -1,8 +1,12 @@
 'use server'
 import matter from 'gray-matter'
 import { remark } from 'remark'
+
+// import comments from 'remark-comments'
+import gfm from 'remark-gfm'
 import html from 'remark-html'
-import remarkPrism from 'remark-prism'
+
+// import remarkPrism from 'remark-prism'
 const metadataRegex = /<!--\s*const metadata\s*=\s*({[\s\S]*?})\s*-->/
 const extractMetadata = (content) => {
 	const metadataMatch = content.match(metadataRegex)
@@ -13,6 +17,30 @@ const extractMetadata = (content) => {
 	} else {
 		return undefined
 	}
+}
+function transformContent(content, codeBlocks) {
+	// Split the content by the placeholders
+	// const regex = new RegExp('<p><code>[^<]+<\\/code>\\s*<code>##code\\[\\d+\\]##<\\/code><\\/p>', 'g')
+	// const parts = content.split(/(<p><code>##code\[\d+\]##<\/code><\/p>)/g)
+	const parts = content.split(/(<p><code>##code\[\d+\]##<\/code><\/p>)/g)
+	const result = []
+	let codeIndex = 0
+
+	parts.forEach((part) => {
+		const match = part.match(/<p><code>##code\[(\d+)\]##<\/code><\/p>/)
+		if (match) {
+			// If it's a placeholder, replace with corresponding code block
+			result.push({ type: 'code', content: codeBlocks[codeIndex] })
+			codeIndex++
+		} else {
+			// Otherwise, treat it as HTML content
+			if (part.trim()) {
+				result.push({ type: 'html', content: part })
+			}
+		}
+	})
+
+	return result
 }
 
 export const getBlogContent = async (slug) => {
@@ -27,22 +55,38 @@ export const getBlogContent = async (slug) => {
 				revalidate: 10
 			}
 		})
-		console.log('status : ', response.status)
 
 		const fileData = await response.json()
-		console.log('fileData : ', fileData)
-		console.log('response : ', response)
 		const content = Buffer.from(fileData.content, 'base64').toString('utf8')
-		const metadata = extractMetadata(content)
+		const metadata = extractMetadata(content) ?? { title: '' }
 		const matterResult = matter(content)
+		let codeBlocks = []
+		const codeRegex = new RegExp('`([^`]+)`\\s+```(\\w+)\\s+([\\s\\S]*?)\\s+```', 'g')
+		let output = matterResult.content.replace(codeRegex, (match, filePath, language, code, index) => {
+			codeBlocks.push({ filePath, language, code })
+			return `\`##code[${codeBlocks.length - 1}]##\``
+		})
+
 		const processedContent = await remark()
 			.use(html, { sanitize: { attributes: { '*': ['style', 'className', 'disabled', 'readonly'] } } })
+			.use(gfm)
 			// .use(html, { sanitize: false })
-			.use(remarkPrism)
-			.process(matterResult.content)
+			// .use(remarkPrism)
+			.process(output)
 
 		const contentHtml = processedContent.toString()
-		return { status: response.status, message: `success`, data: { contentHtml, metadata, ...matterResult.data } }
+		const result = transformContent(contentHtml, codeBlocks)
+
+		return {
+			status: response.status,
+			message: `success`,
+			data: {
+				contentHtml: result,
+				metadata,
+				raw: output,
+				...matterResult.data
+			}
+		}
 	} catch (error) {
 		console.error(error)
 		return { status: 500, message: 'server error' }

@@ -20,7 +20,7 @@ const BlogPage = async () => {
 				gap: '4rem'
 			}}>
 			<h1>Blog</h1>
-			<div style={{ flex: 1, display: 'flex', alignItems: 'flex-start' }}>
+			<div style={{ flex: 1, display: 'flex', alignItems: 'flex-start', gap: '1rem', flexWrap: 'wrap' }}>
 				{blogPosts.map((post, index) => {
 					return (
 						<div

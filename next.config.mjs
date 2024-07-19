@@ -2,7 +2,7 @@
 const nextConfig = {
 	reactStrictMode: false,
 	experimental: {
-		serverComponentsExternalPackages: ['pdfmake', 'remark-prism']
+		serverComponentsExternalPackages: ['pdfmake', 'shiki']
 	},
 	images: {
 		remotePatterns: [
