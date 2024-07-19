@@ -6,9 +6,9 @@ export const cv = {
 	city: 'Bekasi',
 	province: 'West Java',
 	country: 'Indonesia',
-	position: 'Front-End Developer',
+	position: 'Front-end Developer',
 	summary:
-		'A Web Developer mainly focused on Front-end (human interaction) side. I create beautiful interfaces that are simple, friendly, and have optimal performance.',
+		'A Web Developer mainly focused on Front-end side. I create beautiful interfaces that are simple, friendly, and have optimal performance.',
 	contact: [
 		// available whatsapp | email | github | linkedin
 		{ type: 'whatsapp', label: '+6285329000180', url: 'https://wa.me/6285329000180' },
