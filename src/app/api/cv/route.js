@@ -39,6 +39,9 @@ export const GET = async (_request) => {
 		const base64_photo_profile = imageBuffer.toString('base64')
 		const kebab_full_name = toKebabCase(full_name)
 		const filename = `CV__${kebab_full_name}.pdf`
+		const _skills = skills.map(({ label }) => label)
+		const _technical_skills = technical_skills.map(({ label }) => label)
+		const _certifications = certifications.map(({ label }) => label)
 		const binaryResult = await createPdf({
 			template: cvDocument({
 				photo_profile: base64_photo_profile,
@@ -49,9 +52,9 @@ export const GET = async (_request) => {
 				country,
 				summary,
 				contact: modified_contact,
-				skills,
-				technical_skills,
-				certifications,
+				skills: _skills,
+				technical_skills: _technical_skills,
+				certifications: _certifications,
 				educations,
 				update_at
 			})
