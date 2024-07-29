@@ -1,4 +1,4 @@
-export const cv = {
+const cv = {
 	// src/assets/images
 	update_at: '2024-07-29',
 	profile_picture_filename: 'photo.jpg',
@@ -62,3 +62,4 @@ export const cv = {
 		}
 	]
 }
+export default cv

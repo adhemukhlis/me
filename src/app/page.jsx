@@ -1,6 +1,6 @@
 import clsx from 'clsx'
 import Link from 'next/link'
-import { cv } from '@/content/cv'
+import cv from '@/content/cv'
 
 const RootPage = () => {
 	return (
