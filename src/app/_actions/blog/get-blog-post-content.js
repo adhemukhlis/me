@@ -60,9 +60,9 @@ export const getBlogContent = async (slug) => {
 		const content = Buffer.from(fileData.content, 'base64').toString('utf8')
 		const metadata = extractMetadata(content) ?? { title: '' }
 		const matterResult = matter(content)
-		let codeBlocks = []
+		const codeBlocks = []
 		const codeRegex = new RegExp('`([^`]+)`\\s+```(\\w+)\\s+([\\s\\S]*?)\\s+```', 'g')
-		let output = matterResult.content.replace(codeRegex, (match, filePath, language, code, index) => {
+		const output = matterResult.content.replace(codeRegex, (match, filePath, language, code, index) => {
 			codeBlocks.push({ filePath, language, code })
 			return `\`##code[${codeBlocks.length - 1}]##\``
 		})

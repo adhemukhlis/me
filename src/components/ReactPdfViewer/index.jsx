@@ -24,7 +24,7 @@ const ReactPdfViewer = ({ fileUrl, fileName = 'document.pdf' }) => {
 	const renderToolbar = (Toolbar) => <Toolbar>{renderDefaultToolbar(transform)}</Toolbar>
 	const defaultLayoutPluginInstance = defaultLayoutPlugin({
 		renderToolbar,
-		sidebarTabs: (defaultTabs) => [
+		sidebarTabs: (_defaultTabs) => [
 			// Remove the attachments tab (\`defaultTabs[2]\`)
 			// defaultTabs[0], // Bookmarks tab
 			// defaultTabs[1] // Thumbnails tab
