@@ -16,7 +16,7 @@ async function fetchFileCommits(filePath) {
 }
 export const getBlogPosts = async () => {
 	try {
-		let posts = []
+		const posts = []
 		const response = await fetch(`https://api.github.com/repos/adhemukhlis/me/contents/blog/posts?ref=blog`, {
 			headers: {
 				Accept: 'application/vnd.github.v3+json'

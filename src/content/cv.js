@@ -1,6 +1,6 @@
 export const cv = {
 	// src/assets/images
-	update_at: '2024-07-09',
+	update_at: '2024-07-29',
 	profile_picture_filename: 'photo.jpg',
 	full_name: 'Mukhlis Adhe Purwanto',
 	city: 'Bekasi',
@@ -40,5 +40,25 @@ export const cv = {
 			year_of_end: '2016'
 		}
 	],
-	experiences: []
+	experiences: [
+		{
+			company_name: 'PT Wiratek Solusi Asia',
+			location: 'Jakarta, Indonesia',
+			position: 'Front-end Developer',
+			start: '2021-07-8',
+			end: '2024-04-25',
+			content:
+				'Involved in several projects using Vue.js, React.js, and Next.js. Sometimes also helps define API specifications, deploys on servers with Docker, and maintains internal team code quality.\nProjects involved:',
+			projects: ['Flowalytics', 'Kostzy CoLiveWorkPlay']
+		},
+		{
+			company_name: 'PT Samudra Biru Development',
+			location: 'Bogor, Indonesia',
+			position: 'Front-end Developer',
+			start: '2020-07-22',
+			end: '2021-03-10',
+			content: 'Involved in developing Payroll and Human Resource Apps.',
+			projects: ['Ocean']
+		}
+	]
 }
