@@ -2,7 +2,7 @@ import fs from 'fs'
 import path from 'path'
 import { createPdf } from '@/components/PdfGenerator'
 import cvDocument from '@/components/PdfGenerator/TemplateDocuments/cvDocument'
-import { cv } from '@/content/cv'
+import cv from '@/content/cv'
 import toKebabCase from '@/utils/kebab-case'
 const rootDirectory = path.join(process.cwd(), 'src')
 const {

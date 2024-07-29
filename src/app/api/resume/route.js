@@ -1,7 +1,7 @@
 import dayjs from 'dayjs'
 import { createPdf } from '@/components/PdfGenerator'
 import resumeDocument from '@/components/PdfGenerator/TemplateDocuments/resumeDocument'
-import { cv } from '@/content/cv'
+import cv from '@/content/cv'
 import getHumanizeTime from '@/utils/get-humanize-time'
 import toKebabCase from '@/utils/kebab-case'
 const {
@@ -49,11 +49,7 @@ export const GET = async (_request) => {
 		const _skills = skills.join(', ')
 		const _technical_skills = technical_skills.join(', ')
 
-		console.log(
-			'INSIDE API',
-			skills.map((str) => String(str)),
-			technical_skills.map((str) => String(str))
-		)
+		console.log('INSIDE API', cv)
 
 		const binaryResult = await createPdf({
 			template: resumeDocument({

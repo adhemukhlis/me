@@ -1,6 +1,6 @@
 'use client'
 import ReactPdfViewer from '@/components/ReactPdfViewer'
-import { cv } from '@/content/cv'
+import cv from '@/content/cv'
 import toKebabCase from '@/utils/kebab-case'
 const PdfViewer = ({ searchParams }) => {
 	const kebab_full_name = toKebabCase(cv.full_name)

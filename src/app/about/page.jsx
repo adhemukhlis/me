@@ -1,6 +1,6 @@
 import clsx from 'clsx'
 import Image from 'next/image'
-import { cv } from '@/content/cv'
+import cv from '@/content/cv'
 
 const AboutPage = () => {
 	return (
