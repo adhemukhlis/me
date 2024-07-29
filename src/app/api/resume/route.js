@@ -45,15 +45,21 @@ export const GET = async (_request) => {
 				}))
 			: []
 		const _educations = Array.isArray(educations) ? educations : []
+		const _city = [city, province].join(', ')
+		const _skills = skills.join(', ')
+		const _technical_skills = technical_skills.join(', ')
+
+		console.log('INSIDE API', _skills, _technical_skills)
+
 		const binaryResult = await createPdf({
 			template: resumeDocument({
 				full_name,
 				position,
-				city: [city, province].join(', '),
+				city: _city,
 				summary,
 				contact: modified_contact,
-				skills: skills.join(', '),
-				technical_skills: technical_skills.join(', '),
+				skills: _skills,
+				technical_skills: _technical_skills,
 				certifications,
 				educations: _educations,
 				footer: `${_update_at}, ${_first_name}`,

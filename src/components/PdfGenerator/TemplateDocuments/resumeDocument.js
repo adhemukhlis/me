@@ -26,6 +26,7 @@ const resumeDocument = ({
 	footer,
 	experiences
 }) => {
+	console.log('INSIDE DOCUMENT', skills, technical_skills)
 	const FooterSection = {
 		width: 100,
 		text: footer
