@@ -49,7 +49,7 @@ export const GET = async (_request) => {
 		const _skills = skills.join(', ')
 		const _technical_skills = technical_skills.join(', ')
 
-		console.log('INSIDE API', _skills, _technical_skills)
+		console.log('INSIDE API', skills, technical_skills)
 
 		const binaryResult = await createPdf({
 			template: resumeDocument({
