@@ -50,6 +50,9 @@ a {
 		color: $text-color;
 	}
 }
+.bg-white {
+	background-color: #ffffff;
+}
 
 .flex-fill-container {
 	flex: 1;
@@ -61,10 +64,14 @@ a {
 	flex: 1;
 	width: 100%;
 	display: flex;
-	justify-content: center;
-	align-items: center;
 	flex-direction: column;
 	gap: 2rem;
+}
+.justify-center {
+	justify-content: center;
+}
+.align-center {
+	align-items: center;
 }
 
 .menu {
@@ -105,45 +112,57 @@ a {
 		}
 	}
 }
+.blog-card {
+	display: flex;
+	flex-direction: column;
+	border: solid 1px black;
+	padding: 0.8rem;
+	border-radius: 0.8rem;
+	background-color: white;
+	gap: 1rem;
+}
 
 // xs
 @media (max-width: 575.98px) {
 	.content {
-		padding: 1.2rem;
+		padding: 1.2rem 1.2rem 1.2rem 1.2rem;
+	}
+	.blog-card {
+		flex: 1;
 	}
 }
 
 // sm
 @media (min-width: 576px) and (max-width: 767.98px) {
 	.content {
-		padding: 1.2rem;
+		padding: 1.2rem 2.4rem 1.2rem 2.4rem;
 	}
 }
 
 // md
 @media (min-width: 768px) and (max-width: 991.98px) {
 	.content {
-		padding: 1.2rem;
+		padding: 1.2rem 4.8rem 1.2rem 4.8rem;
 	}
 }
 
 // lg
 @media (min-width: 992px) and (max-width: 1199.98px) {
 	.content {
-		padding: 0;
+		padding: 1.2rem 4.8rem 1.2rem 4.8rem;
 	}
 }
 
 // xl
 @media (min-width: 1200px) and (max-width: 1399.98px) {
 	.content {
-		padding: 0;
+		padding: 1.2rem 4.8rem 1.2rem 4.8rem;
 	}
 }
 
 // xxl
 @media (min-width: 1400px) {
 	.content {
-		padding: 0;
+		padding: 1.2rem 4.8rem 1.2rem 4.8rem;
 	}
 }

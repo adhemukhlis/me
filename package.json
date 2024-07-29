@@ -3,37 +3,45 @@
 	"version": "0.1.0",
 	"private": true,
 	"scripts": {
+		"predev": "node move-pdf-worker.js",
+		"prebuild": "node move-pdf-worker.js",
 		"dev": "next dev",
 		"build": "next build",
 		"start": "next start",
 		"lint": "next lint",
 		"prettier-all": "yarn prettier --config .prettierrc --write ./src",
-		"fix": "npx eslint --fix ./src --ext .js --ext .jsx"
+		"fix": "npx eslint --fix ./src --ext .js --ext .jsx",
+		"dependencies-upgrade": "yarn yarn-upgrade-all"
 	},
 	"dependencies": {
 		"@react-pdf-viewer/core": "^3.12.0",
 		"@react-pdf-viewer/default-layout": "^3.12.0",
 		"@react-pdf-viewer/get-file": "^3.12.0",
 		"clsx": "^2.1.1",
-		"dayjs": "^1.11.11",
+		"dayjs": "^1.11.12",
 		"gray-matter": "^4.0.3",
-		"next": "14.2.4",
-		"pdfjs-dist": "2.16.105",
+		"next": "^14.2.5",
+		"pdfjs-dist": "^3.0.279",
 		"pdfmake": "^0.2.10",
-		"react": "^18",
-		"react-dom": "^18",
+		"react": "^18.3.1",
+		"react-dom": "^18.3.1",
 		"remark": "^15.0.1",
 		"remark-gfm": "^4.0.0",
 		"remark-html": "^16.0.1",
-		"sass": "^1.77.6",
-		"shiki": "^1.10.3"
+		"sass": "^1.77.8",
+		"shiki": "^1.12.0",
+		"yarn-upgrade-all": "^0.7.2"
 	},
 	"devDependencies": {
-		"eslint": "^8",
-		"eslint-config-next": "14.2.4",
+		"eslint": "^9.8.0",
+		"eslint-config-next": "^14.2.5",
 		"eslint-plugin-import": "^2.29.1",
-		"eslint-plugin-unicorn": "^54.0.0",
-		"eslint-plugin-unused-imports": "^3.2.0",
-		"prettier": "^3.3.2"
+		"eslint-plugin-unicorn": "^55.0.0",
+		"eslint-plugin-unused-imports": "^4.0.1",
+		"fs-extra": "^11.2.0",
+		"prettier": "^3.3.3"
+	},
+	"yarn-upgrade-all": {
+		"ignore": []
 	}
 }

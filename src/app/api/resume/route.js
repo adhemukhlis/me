@@ -50,8 +50,6 @@ export const GET = async (_request) => {
 		const _technical_skills = technical_skills.map(({ label }) => label).join(' • ')
 		const _certifications = certifications.map(({ label }) => label)
 
-		console.log('INSIDE API', cv)
-
 		const binaryResult = await createPdf({
 			template: resumeDocument({
 				full_name,
