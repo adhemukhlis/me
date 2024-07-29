@@ -20,9 +20,15 @@ const cv = {
 			url: 'https://www.linkedin.com/in/mukhlis-adhe-purwanto'
 		}
 	],
-	skills: ['Team Work', 'Problem Solving'],
-	technical_skills: ['Javascript', 'React.js', 'Next.js', 'Git', 'Docker'],
-	certifications: ['BNSP Junior Web Developer'],
+	skills: [{ label: 'Team Work' }, { label: 'Problem Solving' }],
+	technical_skills: [
+		{ label: 'Javascript' },
+		{ label: 'React.js' },
+		{ label: 'Next.js' },
+		{ label: 'Git' },
+		{ label: 'Docker' }
+	],
+	certifications: [{ label: 'BNSP Junior Web Developer' }],
 	educations: [
 		{
 			study_program: 'Bachelor of Computer Science',

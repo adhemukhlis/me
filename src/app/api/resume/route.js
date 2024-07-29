@@ -46,8 +46,9 @@ export const GET = async (_request) => {
 			: []
 		const _educations = Array.isArray(educations) ? educations : []
 		const _city = [city, province].join(', ')
-		const _skills = skills.join(', ')
-		const _technical_skills = technical_skills.join(', ')
+		const _skills = skills.map(({ label }) => label).join(' • ')
+		const _technical_skills = technical_skills.map(({ label }) => label).join(' • ')
+		const _certifications = certifications.map(({ label }) => label)
 
 		console.log('INSIDE API', cv)
 
@@ -60,7 +61,7 @@ export const GET = async (_request) => {
 				contact: modified_contact,
 				skills: _skills,
 				technical_skills: _technical_skills,
-				certifications,
+				certifications: _certifications,
 				educations: _educations,
 				footer: `${_update_at}, ${_first_name}`,
 				experiences: _experiences
