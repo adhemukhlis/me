@@ -3,6 +3,8 @@
 	"version": "0.1.0",
 	"private": true,
 	"scripts": {
+		"predev": "node move-pdf-worker.js",
+		"prebuild": "node move-pdf-worker.js",
 		"dev": "next dev",
 		"build": "next build",
 		"start": "next start",
@@ -34,6 +36,7 @@
 		"eslint-plugin-import": "^2.29.1",
 		"eslint-plugin-unicorn": "^54.0.0",
 		"eslint-plugin-unused-imports": "^3.2.0",
-		"prettier": "^3.3.2"
+		"prettier": "^3.3.2",
+		"fs-extra": "^11.2.0"
 	}
 }
