@@ -8,7 +8,7 @@ const cv = {
 	country: 'Indonesia',
 	position: 'Front-end Developer',
 	summary:
-		'A Web Developer mainly focused on Front-end side. I create beautiful interfaces that are simple, friendly, and have optimal performance.',
+		'A Web Developer focused primarily on front-end development, creating user-friendly, visually appealing interfaces with optimal performance.',
 	contact: [
 		// available whatsapp | email | github | linkedin
 		{ type: 'whatsapp', label: '+6285329000180', url: 'https://wa.me/6285329000180' },
