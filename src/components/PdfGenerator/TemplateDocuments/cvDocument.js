@@ -278,7 +278,8 @@ const cvDocument = ({
 	defaultStyle: {
 		color: '#000',
 		columnGap: gapSize
-	}
+	},
+	compress: true
 })
 
 export default cvDocument

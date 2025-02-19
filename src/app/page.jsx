@@ -22,9 +22,9 @@ const RootPage = () => {
 				<Link href="/about">
 					<span>About</span>
 				</Link>
-				<Link href="/blog">
+				{/* <Link href="/blog">
 					<span>Blog</span>
-				</Link>
+				</Link> */}
 				<Link href="/resume">
 					<span>Resume</span>
 				</Link>

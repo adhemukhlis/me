@@ -9,7 +9,7 @@
 		"build": "next build",
 		"start": "next start",
 		"lint": "next lint",
-		"prettier-all": "yarn prettier --config .prettierrc --write ./src",
+		"format": "yarn prettier --config .prettierrc --write ./src",
 		"fix": "npx eslint --fix ./src --ext .js --ext .jsx",
 		"dependencies-upgrade": "yarn yarn-upgrade-all"
 	},
@@ -20,16 +20,26 @@
 		"clsx": "^2.1.1",
 		"dayjs": "^1.11.12",
 		"gray-matter": "^4.0.3",
+		"hast-util-to-string": "^3.0.1",
 		"next": "^14.2.5",
 		"pdfjs-dist": "^3.0.279",
 		"pdfmake": "^0.2.10",
 		"react": "^18.3.1",
 		"react-dom": "^18.3.1",
+		"rehype-parse": "^9.0.1",
+		"rehype-sanitize": "^6.0.0",
+		"rehype-shiki": "^0.0.9",
+		"rehype-stringify": "^10.0.1",
 		"remark": "^15.0.1",
 		"remark-gfm": "^4.0.0",
 		"remark-html": "^16.0.1",
+		"remark-parse": "^11.0.0",
+		"remark-rehype": "^11.1.1",
 		"sass": "^1.77.8",
-		"shiki": "^1.12.0",
+		"shiki": "^1.25.1",
+		"unified": "^11.0.5",
+		"unist-builder": "^4.0.0",
+		"unist-util-visit": "^5.0.0",
 		"yarn-upgrade-all": "^0.7.2"
 	},
 	"devDependencies": {
@@ -42,6 +52,8 @@
 		"prettier": "^3.3.3"
 	},
 	"yarn-upgrade-all": {
-		"ignore": ["eslint"]
+		"ignore": [
+			"eslint"
+		]
 	}
 }

@@ -9,6 +9,7 @@ section.about {
 	padding: 1.2rem;
 	border: 1px solid #eaeaea;
 	letter-spacing: 0.028rem;
+	align-self: center;
 }
 
 .avatar {
@@ -16,4 +17,6 @@ section.about {
 	overflow: hidden;
 	width: 180;
 	aspect-ratio: 1/1;
+	align-self: baseline;
+	align-self: center;
 }

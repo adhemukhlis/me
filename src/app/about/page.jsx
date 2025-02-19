@@ -9,8 +9,8 @@ const AboutPage = () => {
 				<div className="avatar">
 					<Image src="https://avatars.githubusercontent.com/u/22783552?v=4" width={180} height={180} alt="profile-picture" />
 				</div>
-				<h1>About</h1>
 				<section className={clsx('about')}>
+					<h1>About</h1>
 					<p>
 						Hello, my name is <b>{cv.full_name}</b>, you can call me <b>{(cv.full_name ?? []).split(' ')[0]}</b> for short.
 					</p>

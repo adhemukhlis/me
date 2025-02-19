@@ -247,7 +247,8 @@ const resumeDocument = ({
 		defaultStyle: {
 			color: '#000',
 			columnGap: gapSize
-		}
+		},
+		compress: true
 	}
 }
 

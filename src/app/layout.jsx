@@ -34,17 +34,16 @@ export const metadata = {
 		site: 'adhemukhlis.vercel.app'
 	},
 	openGraph: {
-		url: "https://www.adhemukhlis.vercel.app/about",
+		url: 'https://www.adhemukhlis.vercel.app/about',
 		type: 'website',
 		title: cv.full_name,
-		description: cv.summary,
+		description: cv.summary
 		// images: `https://www.altaprima.com/_assets/logo/ap-logo.png`
 	}
 }
 export const viewport = {
 	themeColor: '#FFFFFF'
 }
-
 
 const RootLayout = ({ children }) => {
 	return (
